@@ -21,6 +21,11 @@ namespace Employee_Management.Data
             _appDbContext.Remove(entity);
         }
 
+        public bool DoesEntityEntityExists(int id)
+        {
+            return _appDbContext.Set<T>().Find(id) != null;
+        }
+
         public async Task<IEnumerable<T>> GetAllAsync()
         {
             return await _appDbContext.Set<T>().ToListAsync();

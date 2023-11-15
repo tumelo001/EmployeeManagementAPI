@@ -5,6 +5,6 @@
         IEmployeeRepository Employee { get; }
         IPositionRepository Position { get; }
         IDepartmentRepository Department { get; }
-        void SaveChanges();
+        Task SaveChangesAsync();
     }
 }

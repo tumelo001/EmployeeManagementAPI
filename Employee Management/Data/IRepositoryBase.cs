@@ -9,6 +9,7 @@ namespace Employee_Management.Data
         void Delete(T entity);
         Task<T> GetByIdAsync(int id);
         Task<IEnumerable<T>> GetByConditionAsync(Expression<Func<T, bool>> expression);
-        Task<IEnumerable<T>> GetAllAsync(); 
+        Task<IEnumerable<T>> GetAllAsync();
+        bool DoesEntityEntityExists(int id);
     }
 }

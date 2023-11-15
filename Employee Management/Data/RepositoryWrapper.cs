@@ -39,9 +39,9 @@ namespace Employee_Management.Data
                 return _department;
             }
         }
-        public void SaveChanges()
+        public async Task SaveChangesAsync()
         {
-           _appDbContext.SaveChanges();
+           await _appDbContext.SaveChangesAsync();
         }
     }
 }

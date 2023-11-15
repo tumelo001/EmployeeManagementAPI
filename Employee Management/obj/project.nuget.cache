@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+ajLxVuuiVysg1ppxyCpfa0RmSMAPaybAxfKg7V2QyN4sObL5JWqh60QP9plVDf6hxMcZ+y54W9W/eLFcOuKAA==",
+  "dgSpecHash": "WbEJdQQtmVyu1HI9PIqXQyWldhh+64pMRhzPr4a2x5bb8BdMBSiP9E16TYjpSIAFe8OGNFwmCmKI5ZRhuITP8A==",
   "success": true,
   "projectFilePath": "C:\\Users\\tumel\\OneDrive\\Desktop\\Work\\Projects\\Web API\\Employee Management\\Employee Management\\Employee Management.csproj",
   "expectedPackageFiles": [
@@ -53,6 +53,7 @@
     "C:\\Users\\tumel\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\tumel\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\tumel\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\tumel\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.5.0\\swashbuckle.aspnetcore.annotations.6.5.0.nupkg.sha512",
     "C:\\Users\\tumel\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\tumel\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "C:\\Users\\tumel\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
