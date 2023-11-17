@@ -12,8 +12,7 @@ This is a learning project for building a RESTful API using ASP.NET Core for man
 - [Authentication](#authentication)
 - [API Versioning](#api-versioning)
 - [Future Plans](#future-plans)
-- [Contributing](#contributing)
-- [License](#license)
+- [Collaboration](#future-plans)
 
 ## Features
 
@@ -89,8 +88,11 @@ Specify the version in the URL to access the desired version of the API.
 
 This project is intended for learning purposes, and future plans include:
 
-- Adding more features (e.g., employee departments, roles)
+- Adding more features (e.g., employee departments, roles, get employees by pages....)
 - Improving code structure and documentation
 - Enhancing security measures
 - Implementing unit tests
 
+## Contributing
+
+Contributions are welcome! If you have ideas for improvements, open an issue or submit a pull request.
