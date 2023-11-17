@@ -35,6 +35,60 @@ Make sure you have the following tools installed:
 ### Installation
 
 1. Clone the repository:
-
    ```bash
    git clone https://github.com/yourusername/employeemanagement-api.git
+2. Navigate to the project directory:
+   ```bash
+   cd employeemanagement-api
+3. Restore dependencies:
+    ```bash
+    dotnet restore
+4. Build the project:
+    ```bash
+    dotnet build
+5. Run the application:
+     ```bash
+    dotnet run
+
+
+## API Endpoints
+
+- **GET /api/employees**: Retrieve a list of all employees.
+- **GET /api/employees/{id}**: Retrieve details of a specific employee.
+- **POST /api/employees**: Create a new employee.
+- **PUT /api/employees/{id}**: Update details of a specific employee.
+- **DELETE /api/employees/{id}**: Delete a specific employee.
+
+Refer to the API documentation or use tools like Swagger for detailed endpoint information.
+
+## Authentication
+
+To access API resources, users must register and log in. JWT (JSON Web Token) authentication is implemented to secure endpoints.
+
+To register a new user:
+
+- **POST /api/account/register**
+
+To log in:
+
+- **POST /api/account/login**
+
+Include the generated JWT token in the Authorization header of your requests to access protected resources.
+
+## API Versioning
+
+This API uses versioning to provide better control and backward compatibility. Currently supported versions:
+
+- **v1** - `https://localhost:5001/api/v1/employees`
+
+Specify the version in the URL to access the desired version of the API.
+
+## Future Plans
+
+This project is intended for learning purposes, and future plans include:
+
+- Adding more features (e.g., employee departments, roles)
+- Improving code structure and documentation
+- Enhancing security measures
+- Implementing unit tests
+
