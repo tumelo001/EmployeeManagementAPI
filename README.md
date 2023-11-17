@@ -57,7 +57,9 @@ Make sure you have the following tools installed:
 - **GET /api/employees/{id}**: Retrieve details of a specific employee.
 - **POST /api/employees**: Create a new employee.
 - **PUT /api/employees/{id}**: Update details of a specific employee.
-- **DELETE /api/employees/{id}**: Delete a specific employee.
+- **DELETE /api/employees/{id}**: Delete a specific employee.....(more see snippets)
+### Snippet
+![before](./EndPoints.png)
 
 Refer to the API documentation or use tools like Swagger for detailed endpoint information.
 
