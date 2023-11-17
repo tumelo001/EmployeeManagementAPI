@@ -1,15 +1,20 @@
 ﻿using Employee_Management.Data;
 using Microsoft.AspNetCore.Mvc;
 using AutoMapper;
-using Employee_Management.Dtos;
 using Employee_Management.Models;
 using System.Reflection;
 using Swashbuckle.AspNetCore.Annotations;
+using Employee_Management.Models.Dtos;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Asp.Versioning;
 
-namespace Employee_Management.Controllers
+namespace Employee_Management.Controllers.v1
 {
+    /*[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]*/
     [ApiController]
-    [Route("/api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiVersion("1.0")]
     public class EmployeesController : Controller
     {
         private readonly IRepositoryWrapper _repo;
@@ -73,7 +78,7 @@ namespace Employee_Management.Controllers
             if (!await ValidateId(positionId, departmentId))
                 return BadRequest("Invalid PositionId or DepartmentId");
 
-            var employee = await _repo.Employee.GetFullEmployeeDetailsByIdAsync(Id);  
+            var employee = await _repo.Employee.GetFullEmployeeDetailsByIdAsync(Id);
 
             if (employee != null)
             {
@@ -86,9 +91,9 @@ namespace Employee_Management.Controllers
                     emp.HireDate = employee.HireDate;
                     _repo.Employee.Update(emp);
                     await _repo.SaveChangesAsync();
-                    return Ok("Employee updated successfully" );
+                    return Ok("Employee updated successfully");
                 }
-                catch(Exception)
+                catch (Exception)
                 {
                     return StatusCode(500, "Something went wrong while updating. Please try again later.");
                 }
@@ -114,9 +119,7 @@ namespace Employee_Management.Controllers
             {
                 return StatusCode(500, "Something went wrong while updating. Please try again later.");
             }
-           
         }
-
 
         private async Task<bool> ValidateId(int positionId, int departmentId)
         {

@@ -1,14 +1,18 @@
-﻿using AutoMapper;
+﻿using Asp.Versioning;
+using AutoMapper;
 using Employee_Management.Data;
-using Employee_Management.Dtos;
 using Employee_Management.Models;
+using Employee_Management.Models.Dtos;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Identity.Client;
 
-namespace Employee_Management.Controllers
+namespace Employee_Management.Controllers.v1
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiVersion("1.0")]
     public class PositionsController : Controller
     {
         private readonly IRepositoryWrapper _repo;
@@ -22,19 +26,19 @@ namespace Employee_Management.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetAllPositions() 
-        { 
+        public async Task<IActionResult> GetAllPositions()
+        {
             var postions = await _repo.Position.GetAllAsync();
             if (postions == null)
-                return NotFound(); 
+                return NotFound();
             return Ok(postions.Select(_mapper.Map<PositionGetDto>));
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPosition(int id)
         {
-            var position = await _repo.Position.GetByIdAsync(id); 
-            if(position == null)
+            var position = await _repo.Position.GetByIdAsync(id);
+            if (position == null)
                 return NotFound($"Position with {id} doesn't exist.");
             return Ok(_mapper.Map<PositionGetDto>(position));
         }
@@ -48,7 +52,7 @@ namespace Employee_Management.Controllers
             {
                 await _repo.Position.CreateAsync(_mapper.Map<Position>(position));
                 await _repo.SaveChangesAsync();
-                return CreatedAtAction(nameof(AddPosition), "Employee added successfully"); 
+                return CreatedAtAction(nameof(AddPosition), "Employee added successfully");
             }
             catch (Exception)
             {
@@ -60,16 +64,16 @@ namespace Employee_Management.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdatePosition(PositionCreateDto position, int id)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return BadRequest();
             var pos = await _repo.Position.GetByIdAsync(id);
-            if(pos != null)
+            if (pos != null)
             {
                 try
                 {
                     var positionMap = _mapper.Map<Position>(position);
-                    positionMap.Id = pos.Id;    
-                    _repo.Position.Update(positionMap); 
+                    positionMap.Id = pos.Id;
+                    _repo.Position.Update(positionMap);
                     await _repo.SaveChangesAsync();
                     return Ok("Updated successfully");
                 }
@@ -77,9 +81,9 @@ namespace Employee_Management.Controllers
                 {
                     return StatusCode(500, "Something went wrong. Please try again later.");
                 }
-               
+
             }
-            return NotFound();    
+            return NotFound();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Employee_Management.Dtos
+﻿namespace Employee_Management.Models.Dtos
 {
     public class PositionGetDto
     {

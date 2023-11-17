@@ -2,7 +2,7 @@
 using Employee_Management.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace Employee_Management.Dtos
+namespace Employee_Management.Models.Dtos
 {
     public class EmployeeGetDto
     {
@@ -12,7 +12,7 @@ namespace Employee_Management.Dtos
         public string LastName { get; set; }
 
         public string Email { get; set; }
- 
+
         public string Gender { get; set; }
 
         public string PhoneNumber { get; set; }

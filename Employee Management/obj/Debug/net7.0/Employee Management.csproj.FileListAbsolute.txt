@@ -83,3 +83,11 @@ C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employ
 C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employee Management\bin\Debug\net7.0\AutoMapper.dll
 C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employee Management\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employee Management\bin\Debug\net7.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employee Management\bin\Debug\net7.0\Employee Management.staticwebassets.runtime.json
+C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employee Management\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employee Management\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employee Management\bin\Debug\net7.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employee Management\bin\Debug\net7.0\Asp.Versioning.Abstractions.dll
+C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employee Management\bin\Debug\net7.0\Asp.Versioning.Http.dll
+C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employee Management\bin\Debug\net7.0\Asp.Versioning.Mvc.dll
+C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employee Management\bin\Debug\net7.0\Asp.Versioning.Mvc.ApiExplorer.dll
