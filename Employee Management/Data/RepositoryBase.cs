@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper.Configuration.Conventions;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace Employee_Management.Data
@@ -10,6 +11,11 @@ namespace Employee_Management.Data
         public RepositoryBase(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
+        }
+
+        public async Task<int> GetTotal()
+        {
+            return await _appDbContext.Set<T>().CountAsync();
         }
         public async Task CreateAsync(T entity)
         {
@@ -41,9 +47,14 @@ namespace Employee_Management.Data
             return await _appDbContext.Set<T>().FindAsync(id);
         }
 
+        public async Task<IEnumerable<T>> GetByPage(int page, int take)
+        {
+            return await _appDbContext.Set<T>().Skip((page - 1) * take).Take(take).ToListAsync();
+        }
+
         public void Update(T entity)
         {
-            _appDbContext.Update(entity);    
+            _appDbContext.Update(entity);
         }
     }
 }

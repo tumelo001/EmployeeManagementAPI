@@ -91,3 +91,4 @@ C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employ
 C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employee Management\bin\Debug\net7.0\Asp.Versioning.Http.dll
 C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employee Management\bin\Debug\net7.0\Asp.Versioning.Mvc.dll
 C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employee Management\bin\Debug\net7.0\Asp.Versioning.Mvc.ApiExplorer.dll
+C:\Users\tumel\OneDrive\Desktop\Work\Projects\Web API\Employee Management\Employee Management\obj\Debug\net7.0\Employee Management.sourcelink.json

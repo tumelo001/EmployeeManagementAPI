@@ -8,10 +8,12 @@ using Employee_Management.Models.Dtos;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Asp.Versioning;
+using AutoMapper.Configuration.Conventions;
+using AutoMapper.Execution;
 
 namespace Employee_Management.Controllers.v1
 {
-    /*[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]*/
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("1.0")]
@@ -26,13 +28,28 @@ namespace Employee_Management.Controllers.v1
             _mapper = mapper;
         }
 
+        public int iTake => 10;
+
         [SwaggerOperation(Summary = "Get all employees")]
         [HttpGet]
-        public async Task<IActionResult> GetAllEmployees()
+        public async Task<IActionResult> GetEmployees([FromQuery] int page = 1, [FromQuery] string position = null, [FromQuery] string department = null)
         {
-            var employees = await _repo.Employee.GetFullEmployeesDetailsAsync();
-            if (employees == null) { return NotFound(); }
-            return Ok(employees.Select(_mapper.Map<EmployeeGetDto>));
+            IEnumerable<Employee> employees;
+            try
+            {
+                employees = await _repo.Employee.GetFullEmployeesDetailsAsync(page, iTake, position, department);
+               
+                if (employees == null) { return NotFound(); }
+
+                return Ok(new { page = page, 
+                                result = employees.Count(),
+                                totalEmployees = await _repo.Employee.GetTotal(), 
+                                employees = employees.Select(_mapper.Map<EmployeeGetDto>) });
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Something went wrong. Please try again later.");
+            }
         }
 
         [HttpGet("{Id}")]
